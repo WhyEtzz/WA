@@ -3536,7 +3536,7 @@ break
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            const cerpen = await get.get('https://arugaz.herokuapp.com/api/cerpen').json()
+            const cerpen = await get.get('https://arugaz.my.id/api/cerpen').json()
             tobz.reply(from, `• *Cerpen*: ${cerpen.result}`, id)
             break
         case prefix+'puisi': // ARUGAZ
@@ -3545,7 +3545,7 @@ break
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
-            const puisi = await get.get('https://arugaz.herokuapp.com/api/puisi1').json()
+            const puisi = await get.get('https://arugaz.my.id/api/puisi1').json()
             tobz.reply(from, `• *Puisi*: ${puisi.result}`, id)
             break
         case prefix+'puisi2': // ARUGAZ
@@ -3553,7 +3553,7 @@ break
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            const puisi2 = await get.get('https://arugaz.herokuapp.com/api/puisi2').json()
+            const puisi2 = await get.get('https://arugaz.my.id/api/puisi2').json()
             tobz.reply(from, `• *Puisi*: ${puisi2.result}`, id)
             break
         case prefix+'puisi3': // ARUGAZ
@@ -3561,7 +3561,7 @@ break
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
-            const puisi3 = await get.get('https://arugaz.herokuapp.com/api/puisi3').json()
+            const puisi3 = await get.get('https://arugaz.my.id/api/puisi3').json()
             tobz.reply(from, `• *Puisi*: ${puisi3.result}`, id)
             break
         // ADMIN & OWNER
@@ -4364,4 +4364,3 @@ case prefix+'ava':
         //tobz.kill().then(a => console.log(a))
     }
 }
-
