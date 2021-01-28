@@ -42,7 +42,6 @@ const request = require('request')
 const scdl = require('soundcloud-downloader').default
 const CLIENT_ID = 'cnbOY8Qiy1ZY5tV4rmxko7KuXTsaDfOZ'
 const stext = require('./lib/stickertext')
-const stek = require('./lib/kepo')
 
 
 const { getStickerMaker } = require('./lib/ttp')
@@ -2850,26 +2849,7 @@ ${desc}`)
              tobz.sendText(ownerNumber, 'Resepmasakan Error : ' + err)
            }
            break
- case prefix+'stalk':
-                    if(isLimit(serial)) return
-                    if(isReg(obj)) return
-                    if(cekumur(cekage)) return
-                    if (args.length == 1) {
-                    const username = args[0]
-                    const { user } = await stek.stalk(username)
-                    console.log(user)
-                    if (user == null) {
-                        return await tobz.reply(from, 'Username tidak ditemukan', id) 
-                    } else {
-                    const dp = (user.hd_profile_pic_url_info.url)
-                    const result = `_*ɪɴꜱᴛᴀɢʀᴀᴍ ꜱᴄʀᴀᴘᴇʀ*_\n● Username : @${user.username}\n● Nama : ${user.full_name}\n● Private : ${user.is_private ? 'Iya' : 'Tidak'}\n● Jumlah Post : ${user.media_count}\n● Mengikuti : ${user.edge_followed_by.count\n● Pengikut : ${user.edge_followed_by.count}\n● Bio : ${user.biography ? user.biography : '-'}\n${user.external_url ? '● Url : ' + user.external_url + '\n' : ''}● Profil : https://www.instagram.com/${user.username}\n_*ɪɴꜱᴛᴀɢʀᴀᴍ ꜱᴄʀᴀᴘᴇʀ*_`
-                        await tobz.sendFileFromUrl(from, dp, 'profil.jpg', `${result}`)
-                        limitAdd(serial)
-					}
-                    } else {
-                        await tobz.reply(from, 'kirim #stalk username', id)
-                    }
-                    break  
+  
         case prefix+'twitterstalk':
         case prefix+'twtstalk':
             if(isReg(obj)) return
@@ -3166,6 +3146,7 @@ ${profile}
            }
           break
         case prefix+'joox':
+case prefix+'lagu':
             if(isReg(obj)) return
             if(cekumur(cekage)) return
             if (!isGroupMsg) return tobz.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
@@ -3526,7 +3507,7 @@ break
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#chord [query]*, contoh *#chord aku bukan boneka*', id)
             const query__ = body.slice(7)
-            const chord = await axios.get('https://tobz-api.herokuapp.com/api/chord?q='+ query__+'&apikey='+tobzkey)
+            const chord = await axios.get('http://docs-jojo.herokuapp.com/api/chord?q='+ query__')
             if (chord.data.error) return tobz.reply(from, chord.data.error, id)
             tobz.reply(from, chord.data.result, id)
             await limitAdd(serial)
@@ -3894,6 +3875,8 @@ break
             }
             break
         case prefix+'linkgroup':
+case prefix+'link':
+case prefix+'getlink':
             if (!isGroupMsg) return tobz.reply(from, `Fitur ini hanya bisa di gunakan dalam group`, id)
             if (!isGroupAdmins) return tobz.reply(from, `Fitur ini hanya bisa di gunakan oleh admin group`, id)
             if (!isBotGroupAdmins) return tobz.reply(from, `Fitur ini hanya bisa di gunakan ketika bot menjadi admin`, id)
@@ -4304,7 +4287,7 @@ case prefix+'ava':
             tobz.sendText(from, help(prefix, cts, pendaftar))
             break
         case prefix+'Etzzgroup':
-            tobz.reply(from, `Link Group Etzz : https://chat.whatsapp.com/By906EiJBGBCZGURDadOat\nJangan Lupa Join Ya Kak ${pushname}`, id)
+            tobz.reply(from, `Link Group Etzz : https://chat.whatsapp.com/BvIYhkVDOgi8vo38voRk6I\nJangan Lupa Join Ya Kak ${pushname}`, id)
             break
         case prefix+'groupmenu':
             tobz.sendText(from, groupcmd(prefix))
