@@ -3507,7 +3507,7 @@ break
             if (isLimit(serial)) return tobz.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length === 1) return tobz.reply(from, 'Kirim perintah *#chord [query]*, contoh *#chord aku bukan boneka*', id)
             const query__ = body.slice(7)
-            const chord = await axios.get('http://docs-jojo.herokuapp.com/api/chord?q='+ query__')
+            const chord = await axios.get('http://docs-jojo.herokuapp.com/api/chord?q='+ query__)
             if (chord.data.error) return tobz.reply(from, chord.data.error, id)
             tobz.reply(from, chord.data.result, id)
             await limitAdd(serial)
