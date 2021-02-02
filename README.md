@@ -73,14 +73,14 @@ Install the dependencies:
 ```bash
 > npm install
 > npm install -g pm2
+> npm install canvas-txt --save
+> npm install scdl
 ```
 
 ### Usage
 1. run the Whatsapp bot
 
 ```bash
-> npm install canvas-txt --save
-> npm install scdl
 > npm start
 ```
 or
