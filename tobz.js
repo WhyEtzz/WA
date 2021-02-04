@@ -2735,6 +2735,7 @@ ${desc}`)
                 tobz.sendFileFromUrl(from, wiki.data.result.ImgResult, '', `*「 WIKI 」*\n\n➸ *Query* : ${queryz_}\n\n➸ *Result* : ${res.data.result}`, id)
                 await limitAdd(serial)
             }
+break
         case prefix+'kbbi':
             if(isReg(obj)) return
             if(cekumur(cekage)) return
